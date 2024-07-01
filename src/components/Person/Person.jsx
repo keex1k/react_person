@@ -1,15 +1,20 @@
 export const Person = ({ person = {} }) => {
   let isAge = null;
-  let marriedPargraph = <p className="Person__partner">I am not married</p>
-  if('age' in person) {
-    isAge = <p className="Person__age">I am {person.age}</p>
+  let marriedPargraph = <p className="Person__partner">I am not married</p>;
+
+  if ('age' in person) {
+    isAge = <p className="Person__age">I am {person.age}</p>;
   }
 
-  if(person.isMarried) {
-    if(person.sex === 'm') {
-      marriedPargraph = <p className="Person__partner">{person.partnerName} is my wife</p>
+  if (person.isMarried) {
+    if (person.sex === 'm') {
+      marriedPargraph = (
+        <p className="Person__partner">{person.partnerName} is my wife</p>
+      );
     } else {
-      marriedPargraph = <p className="Person__partner">{person.partnerName} is my husband</p>
+      marriedPargraph = (
+        <p className="Person__partner">{person.partnerName} is my husband</p>
+      );
     }
   }
 
@@ -19,5 +24,5 @@ export const Person = ({ person = {} }) => {
       {isAge}
       {marriedPargraph}
     </section>
-  )
- };
+  );
+};
